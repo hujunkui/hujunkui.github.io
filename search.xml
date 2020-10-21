@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[测试一下]]></title>
-    <url>%2F2019%2F11%2F15%2F%E6%B5%8B%E8%AF%95%E4%B8%80%E4%B8%8B%2F</url>
-    <content type="text"><![CDATA[哈哈哈哈哈哈哈哈测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下]]></content>
-      <categories>
-        <category>测试一下</category>
-      </categories>
-      <tags>
-        <tag>没有标签</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[NYOJ-1239]]></title>
     <url>%2F2019%2F05%2F04%2FNYOJ-1239%2F</url>
     <content type="text"><![CDATA[第八届河南省acm————引水工程 NYOJ-1239题目描述 南水北调工程是优化水资源配置、促进区域协调发展的基础性工程，是新中国成立以来投资额最大、涉及面最广的战略性工程，事关中华民族长远发展。“南水北调工程”，旨在缓解中国华北和西北地区水资源短缺的国家战略性工程。就是把中国长江流域丰盈的水资源抽调一部分送到华北和西北地区。我国南涝北旱，南水北调工程通过跨流域的水资源合理配置，促进南北方经济、社会与人口、资源、环境的协调发展。 整个工程分东线、中线、西线三条调水线。东线工程位于东部，因地势低需抽水北送至华北地区。中线工程从汉水与其最大支流丹江交汇处的丹江口水库引水，自流供水给黄淮海平原大部分地区，20多座大中城市；西线工程在青藏高原上，由长江上游向黄河上游补水。 现在有N个区域需要建设水资源工程，它们可以自建水库解决缺水问题，也可以从已有水源的地区建立管道引水过来。当然，这些建设都需要大量投资。 你能不能给出一个优化水资源配置方案，在保证每个区域都能用上水的前提下，使得整个引水工程费用最低。 输入描述 第一行： K 表示有多少组测试数据。接下来对每组测试数据：第1行: N 表示有N个区域（ 1&lt;=N&lt;=300 ）第2行： W1 W2 …. WN Wi表示第i个区域自建水库需要的费用再有N行： Pi1 Pi2 …. Pin Pij表示建立第i个区域与第j个区域引水管道的费用 输出描述 对于每组测试数据，输出占一行，即建立整个引水工程的最小费用。 样例输入 155 4 4 3 60 2 2 2 22 0 3 3 32 3 0 4 52 3 4 0 12 3 5 1 0 样例输出 10 在图中加入一个节点，此节点到其他水库的权值为自建水库所需要的费用，在图中求最小生成树，最小生成树中所有边的和即为整个工程的最小费用 Kruskal算法求最小生成树12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &lt;bits/stdc++.h&gt;using namespace std;int f[300 + 5],n,cnt;struct node&#123; int x,y,value;&#125;s[90000 + 5];bool cmp(node a,node b)&#123; return a.value &lt; b.value;&#125;void addedge(int i, int j, int value)//添加边到集合中&#123; s[cnt].x = i; s[cnt].y = j; s[cnt++].value = value;&#125;int find(int x)//查找集合的根&#123; if(x == f[x]) return x; return f[x] = find(f[x]);&#125;bool merge(int i,int j)//合并集合&#123; int x=find(i); int y=find(j); if(x!=y) &#123; f[x]=y; return true; &#125; return false;&#125;int main()&#123; int t,temp; cin &gt;&gt; t; while(t--) &#123; int sum = 0;//记录整个引水工程的费用总和 cnt = 0;//记录图中边的数量 cin &gt;&gt; n; for(int i = 0; i &lt;= n; i++)//初始化并查集 f[i] = i; for(int i = 1; i &lt;= n; i++) &#123; cin &gt;&gt; temp;//读入自建水库所需费用 addedge(0, i, temp);//将其对应的边加入图中 &#125; for(int i = 1; i &lt;= n; i++) &#123; for(int j = 1; j &lt;= n; j++) &#123; cin &gt;&gt; temp;//读入引水所需的费用 addedge(i, j, temp);//把引水对应的边加入图中 &#125; &#125; sort(s, s + cnt, cmp);//对所有边的权值排序 for(int i = 0; i &lt; cnt; i++) &#123; if(merge(s[i].x,s[i].y)) sum += s[i].value; &#125; cout &lt;&lt; sum &lt;&lt; endl; &#125;&#125;]]></content>
