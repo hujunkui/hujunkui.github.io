@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[测试一下]]></title>
+    <url>%2F2019%2F11%2F15%2F%E6%B5%8B%E8%AF%95%E4%B8%80%E4%B8%8B%2F</url>
+    <content type="text"><![CDATA[哈哈哈哈哈哈哈哈测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下]]></content>
+      <categories>
+        <category>测试一下</category>
+      </categories>
+      <tags>
+        <tag>没有标签</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[NYOJ-1239]]></title>
+    <url>%2F2019%2F05%2F04%2FNYOJ-1239%2F</url>
+    <content type="text"><![CDATA[第八届河南省acm————引水工程 NYOJ-1239题目描述 南水北调工程是优化水资源配置、促进区域协调发展的基础性工程，是新中国成立以来投资额最大、涉及面最广的战略性工程，事关中华民族长远发展。“南水北调工程”，旨在缓解中国华北和西北地区水资源短缺的国家战略性工程。就是把中国长江流域丰盈的水资源抽调一部分送到华北和西北地区。我国南涝北旱，南水北调工程通过跨流域的水资源合理配置，促进南北方经济、社会与人口、资源、环境的协调发展。 整个工程分东线、中线、西线三条调水线。东线工程位于东部，因地势低需抽水北送至华北地区。中线工程从汉水与其最大支流丹江交汇处的丹江口水库引水，自流供水给黄淮海平原大部分地区，20多座大中城市；西线工程在青藏高原上，由长江上游向黄河上游补水。 现在有N个区域需要建设水资源工程，它们可以自建水库解决缺水问题，也可以从已有水源的地区建立管道引水过来。当然，这些建设都需要大量投资。 你能不能给出一个优化水资源配置方案，在保证每个区域都能用上水的前提下，使得整个引水工程费用最低。 输入描述 第一行： K 表示有多少组测试数据。接下来对每组测试数据：第1行: N 表示有N个区域（ 1&lt;=N&lt;=300 ）第2行： W1 W2 …. WN Wi表示第i个区域自建水库需要的费用再有N行： Pi1 Pi2 …. Pin Pij表示建立第i个区域与第j个区域引水管道的费用 输出描述 对于每组测试数据，输出占一行，即建立整个引水工程的最小费用。 样例输入 155 4 4 3 60 2 2 2 22 0 3 3 32 3 0 4 52 3 4 0 12 3 5 1 0 样例输出 10 在图中加入一个节点，此节点到其他水库的权值为自建水库所需要的费用，在图中求最小生成树，最小生成树中所有边的和即为整个工程的最小费用 Kruskal算法求最小生成树12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &lt;bits/stdc++.h&gt;using namespace std;int f[300 + 5],n,cnt;struct node&#123; int x,y,value;&#125;s[90000 + 5];bool cmp(node a,node b)&#123; return a.value &lt; b.value;&#125;void addedge(int i, int j, int value)//添加边到集合中&#123; s[cnt].x = i; s[cnt].y = j; s[cnt++].value = value;&#125;int find(int x)//查找集合的根&#123; if(x == f[x]) return x; return f[x] = find(f[x]);&#125;bool merge(int i,int j)//合并集合&#123; int x=find(i); int y=find(j); if(x!=y) &#123; f[x]=y; return true; &#125; return false;&#125;int main()&#123; int t,temp; cin &gt;&gt; t; while(t--) &#123; int sum = 0;//记录整个引水工程的费用总和 cnt = 0;//记录图中边的数量 cin &gt;&gt; n; for(int i = 0; i &lt;= n; i++)//初始化并查集 f[i] = i; for(int i = 1; i &lt;= n; i++) &#123; cin &gt;&gt; temp;//读入自建水库所需费用 addedge(0, i, temp);//将其对应的边加入图中 &#125; for(int i = 1; i &lt;= n; i++) &#123; for(int j = 1; j &lt;= n; j++) &#123; cin &gt;&gt; temp;//读入引水所需的费用 addedge(i, j, temp);//把引水对应的边加入图中 &#125; &#125; sort(s, s + cnt, cmp);//对所有边的权值排序 for(int i = 0; i &lt; cnt; i++) &#123; if(merge(s[i].x,s[i].y)) sum += s[i].value; &#125; cout &lt;&lt; sum &lt;&lt; endl; &#125;&#125;]]></content>
+      <categories>
+        <category>acm</category>
+      </categories>
+      <tags>
+        <tag>最小生成树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PicGo + Github搭建个人图床工具]]></title>
+    <url>%2F2019%2F05%2F01%2Faaa%2F</url>
+    <content type="text"><![CDATA[PicGo + Github搭建个人图床工具我们平时写博客的时候会经常引用一些图片，而Markdown和Word不一样，Word是把图片镶嵌在文档中的，而Markdown是以链接的方式来读取图片的，可以是本地图片也可以是网络上的图片，如果把图片放在本地，把文档发给别人的同时还得把图片发给别人，不仅如此，还得保证图片和文档的相随路径不发生改变。显然，这样操作很麻烦，更好的方法是把图片存在一些网站上，以网络链接的方式读取图片，以这样的方式读取图片是需要连网的，都9102年了，网络估计不成什么问题。 创建Github图床在Github中创建任意名称的项目进入Settings 进入Developer settings 进入Personal access tokens 进入 随便填写一个描述，然后勾上repo 点击最下面的Generate token 记住生成的token,只会显示一次，以后将不会出现，如果忘记了可以重新生成 PicGo是什么？上面我们提到了，我们写博客插入图片通常是网络链接，那么以前我们都是怎么操作的呢? 截一张图 打开xxx网站，登录，找到上传，上传图片 关闭上传窗口，找到地址，复制地址，再关闭xxx网站 粘贴到 Markdown 里 每次插入一张图片都要进行如此繁琐的操作，那岂不是把大量的时间浪费在了这些没有意义的事情上了，这时，万能的程序员就写出了PicGO这个开源项目，把上面繁琐的步骤封装起来，以后插入图片只需要这样操作即可 截一张图 按下快捷键 粘贴到 Markdown 里 安装PicGo下载PicGo并安装选中图床设置中的Github图床 仓库名为Github用户名/创建的图床仓库名 分支填master 填写之前获取的token 在图床仓库中存放的位置，填什么都行 自定义域名照着格式填写https://raw.githubusercontent.com/Github用户名/图床仓库名/master 设置快捷键,这个看个人习惯了 上传方式 拖拽上传 快捷键上传 可以在相册中查看自己的上传记录]]></content>
+      <categories>
+        <category>实用教程</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo + Github 搭建免费个人博客（未完待续）]]></title>
+    <url>%2F2019%2F05%2F01%2Fhexos%2F</url>
+    <content type="text"><![CDATA[Windows系统下搭建基于Hexo框架的博客网站（未完待续）Hexo 简介 Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。大家可以进入Hexo官网进行详细查看，因为Hexo的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。 Hexo 搭建步骤1. 安装Git 2. 安装Node.js 3. 安装Hexo ...未完待续 1. 安装GitGit是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。也就是用 来管理你的hexo博客文章，上传到GitHub的工具。 到Git官网上下载Git并安装,安装好后在cmd窗口查看一下版本检测是否安装成功 git --version 2. 安装Node.js Hexo是基于nodeJS编写的，所以需要安装一下nodeJs和里面的npm工具 下载Node.js并安装,安装好后在cmd窗口查看一下版本检测是否安装成功12node -vnpm -v 3. 安装Hexo创建一个文件夹blog(名字随意)，选中文件夹右键Git Bash Here打开 更换npm源npm --registry https://registry.npm.taobao.org install express 安装Hexonpm install -g hexo-cli hexo -v检查版本 npm install安装Hexo框架依赖库 hexo init初始化Hexo 初始化完成后，会有一个默认主题以及一个hello-word的默认文章。所以我们可以先生成博客来看一下效果，运行命令： hexo -generate //可以简写为hexo -g hexo -server//可以简写为hexo -s 在浏览器中输入localhost:4000查看效果 4.更换主题有许多优秀的主题，可以自行下载尝试，这里我用next主题作为例子，修改_config.yml配置文件，在文件中查 找theme并将其值修改为next 下载next主题 git clone https://github.com/theme-next/hexo-theme-next themes/next 修改_config.yml配置文件中的theme的值为next 执行命令看一下效果 hexo -generate hexo -server 更改页面布局修改themes文件夹下的_config.yml配置文件,用哪个就把哪个的注释打开即可，这里我选择了Gemini 开启头像功能修改themes文件夹下的_config.yml配置文件,把注释打开即可，如果想更换修改下图片路径 开启菜单栏其他功能修改themes文件夹下的_config.yml配置文件,想要哪个功能，就把哪个注释打开]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[如何使用VJudge平台]]></title>
+    <url>%2F2019%2F04%2F30%2F1%2F</url>
+    <content type="text"><![CDATA[如何使用VJudge平台刷题1.如何找到题对于ACM刚入门的新手，建议先刷一刷HDU上著名的100道水题（2000 - 2099），熟悉一下竞赛的基本套路，首先在首页点击Problem然后选择OJ源为HDU，然后再Prob中输入2，最后点击排序箭头进行排序。 2.如何做题现在我就拿HDU2000这道题举例子，点击题目名称进入题目页面， 不要点击题号，点题号会进入题目的原网站。在本地编写并调试好代码后点击左上角的Submit进入提交页面进行提交。 在language选项框中选择语言，然后在Solution框中拷贝上自己的代码，最后点右下角的Submit进行提交。 最后可以看到自己的提交状态 下面是常见的OJ评判结果以及它们表示的意思： Queuing : 提交太多了，OJ无法在第一时间给所有提交以评判结果，后面提交的程序将暂时处于排队状态等待OJ的评 判。不过这个过程一般不会很长。 Compiling : 您提交的代码正在被编译。 Running : 您的程序正在OJ上运行。 Judging : OJ正在检查您程序的输出是否正确。 Accepted (AC) : 您的程序是正确的，恭喜！ Wrong Answer (WA) : 输出结果错，这个一般认为是算法有问题。 Time Limit Exceeded (TLE) : 您的程序运行的时间已经超出了这个题目的时间限制。 Memory Limit Exceeded (MLE) : 您的程序运行的内存已经超出了这个题目的内存限制。 Output Limit Exceeded (OLE) : 您的程序输出内容太多，超过了这个题目的输出限制。 Compilation Error (CE) : 您的程序语法有问题，编译器无法编译。具体的出错信息可以点击链接察看。 Presentation Error (PE) : 虽然您的程序貌似输出了正确的结果，但是这个结果的格式有点问题。请检查程序的 输出是否多了或者少了空格（&apos; &apos;）、制表符（&apos;\t&apos;）或者换行符（&apos;\n&apos;）。 Runtime Error (RE) : 运行时错误，这个一般是程序在运行期间执行了非法的操作造成的。以下列出常见的错误类 型： ACCESS_VIOLATION 您的程序想从一些非法的地址空间读取或向其中写入内容。一般例如指针、数组下标越界都会造 成这个错误的。 ARRAY_BOUNDS_EXCEEDED 您的程序试图访问一个超出硬件支持范围的数组单元。 FLOAT_DENORMAL_OPERAND 进行了一个非正常的浮点操作。一般是由于一个非正常的浮点数参与了浮点操作所引起的 ，比如这个数的浮点格式不正确。 FLOAT_DIVIDE_BY_ZERO 浮点数除法出现除数为零的异常。 FLOAT_OVERFLOW 浮点溢出。要表示的数太大，超出了浮点数的表示范围。 FLOAT_UNDERFLOW 浮点下溢。要表示的数太小，超出了浮点数的表示范围。 INTEGER_DIVIDE_BY_ZERO 在进行整数除法的时候出现了除数为零的异常。 INTEGER_OVERFLOW 整数溢出。要表示的数值太大，超出了整数变量的范围。 STACK_OVERFLOW 栈溢出。一般是由于无限递归或者在函数里使用了太大的数组变量的原因。顾名思义，stack overflow 就是是栈溢出了。在进行数值运算时，我们常常要和运算结果的溢出打交道。数值运算结果可能上溢 （overflow），也可能是下溢（underflow）。不过栈的溢出显然只可能是上溢，即栈空间被用完了。 要正确处理栈溢出采用以下办法： （1）修正我们的程序，不要造成无穷递归或太深的递归。我们可以把某些递归代码非递归化，例如那个经典的 qsort ，最好就用非递归的算法来实现，就比较皮实一点。 （2）修正我们的程序，不要定义过大的局部变量，特别是在定义大结构、大数组时要格外小心。有时我们可能会用 _alloca() 这样的特殊函数直接在栈上分配空间，更要多加注意。可以定义成static （3）利用编译器的特性，将进程允许的栈大小设置得大一些。例如可以采用 MSC 中的 /STACK 参数开关。 （4）对于那些还可能导致栈溢出的代码，采用 Microsoft 的结构化异常处理或标准的 C++ 异常处理机制，结合 _resetstkoflw() 进行处理。当然了，要是不嫌麻烦，我们也可以自己探测所用栈的大小，动态地检测是否可能导 致 栈溢出，以避免可能的异常。 ...... 其他错误，包括C++标准库/STL运行时库错误等，这里不再举例。]]></content>
+      <categories>
+        <category>acm</category>
+      </categories>
+      <tags>
+        <tag>1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ACM常见博弈论--巴什博弈]]></title>
+    <url>%2F2019%2F04%2F29%2F2%2F</url>
+    <content type="text"><![CDATA[巴什博弈（Bash Game）有n个石子，两个人从轮流中取出（1 ~ m）个；最后取光者胜。 巴什博奕是博弈论问题中基础的问题，它是最简单的一种情形对应一种状态的博弈。 分析：我们从最简单的情景开始分析 当石子有1 − m个时，毫无疑问，先手必胜 当石子有m + 1个时，先手无论拿几个，后手都可以拿干净，先手必败 当石子有m + 2 到 2m时，先手可以拿走几个，剩下m + 1个，先手必胜 我们不难发现，面临m + 1个石子的人一定失败。 这样的话两个人的最优策略一定是通过拿走石子，使得对方拿石子时还有m+1个 我们考虑往一般情况推广为通过拿走石子，使得对方拿石子时还有（m+1）的倍数个 设当前的石子数为n = k ∗ (m + 1) + r 先手会首先拿走r个，接下来假设后手拿走x个，先手会拿走m + 1 − x个，这样博弈下去后手最 终一定失败设当前的石子数为n = k ∗ (m + 1) 假设先手拿x个，后手一定会拿m + 1 − x个，这样下去先手一定失败 1234567891011#include &lt;iostream&gt;int main()&#123; int n,m; cin &gt;&gt; n &gt;&gt; m; if(n % (m + 1) !=0) cout &lt;&lt; "first win" &lt;&lt; endl; else cout &lt;&lt; "second win" &lt;&lt; endl; return 0;&#125; 例题1 HDU-1846巴什博弈裸题 1234567891011121314151617#include &lt;bits/stdc++.h&gt;using namespace std;int main()&#123; int t; cin &gt;&gt; t; while(t--) &#123; int n, m; cin &gt;&gt; n &gt;&gt; m; if(n % (m + 1) == 0) cout &lt;&lt; "second" &lt;&lt; endl; else cout &lt;&lt; "first" &lt;&lt; endl; &#125; return 0;&#125; 例题2 HDU-2149巴什博弈 + 考虑下n &lt; m 的情况 12345678910111213141516171819202122232425262728#include &lt;bits/stdc++.h&gt;using namespace std;int main()&#123; int m, n; while(cin &gt;&gt; m &gt;&gt; n) &#123; if(m % (n + 1) == 0) //先手必败状态 cout &lt;&lt; "none" &lt;&lt; endl; else &#123; if(m &gt; n) cout &lt;&lt; m % (n + 1) &lt;&lt; endl;//把余数取走，是游戏处于必败状态 else &#123; for(int i = m; i &lt;= n; i++) &#123; cout &lt;&lt; i; if(i != n) cout &lt;&lt; " "; else cout &lt;&lt; endl; &#125; &#125; &#125; &#125; return 0;&#125; 例题3 HDU-1847首先要寻找必败状态，n为3时先手必败。分析如下： 若是留给先手的是3，那么只能取1个或2个，所以再轮到后手取的话必赢。 若是给后手留下的是3的倍数，假设为3n(n=1,2,3,..)，那么无论先手取什么数，剩余的数一 定可以写成3m+1或者3m+2(m&lt;n)的形式，那么只要先手再取的时候留给后手的仍然是3的倍数的 话，就必胜了。所以说这道题判断一下n是否是3的倍数，如果是先手必败。 1234567891011121314#include &lt;bits/stdc++.h&gt;using namespace std;int main()&#123; int n; while(cin &gt;&gt; n) &#123; if(n % 3 == 0) cout &lt;&lt; "Cici" &lt;&lt; endl; else cout &lt;&lt; "Kiki" &lt;&lt; endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>acm</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ACM入门之多组数据输入输出]]></title>
+    <url>%2F2019%2F04%2F28%2FACM%2F</url>
+    <content type="text"><![CDATA[不论是在ACM/ICPC这样类型的比赛中，还是在做项目中，对于输入输出的格式尤为重要，不可以想当然的按自己那一套走，我们需要根据题目要求进行操作，对于第一次接触这方面比赛的小白，最为常见的现象便是类似于下面这行代码123456789#include &lt;stdio.h&gt;int main()&#123; int a, b; printf("请输入整数 a 和 b\n"); scanf("%d%d",&amp;a, &amp;b); printf("a和b的和为%d的"，a + b); return 0;&#125; 倘若题目没有要求你，千万不要有多余的输出，虽然在测试的时候方便自己，但也麻烦在提交运行时注释掉，因为电脑可没有你的大脑那样灵活，他要对比的数据很死板，多一个空格少一个空格都不行，所以，在这一块的处理一定要 细心！细心！再细心！ 下面我们来看下常见的输入输出格式有哪些 1. 单组数据输入输出题目要求输入一组整数a和b,然后输出a和b的和C++123456789#include &lt;iostream&gt;using namespace std;int main()&#123; int a, b; cin &gt;&gt; a &gt;&gt; b; cout &lt;&lt; a + b &lt;&lt; endl; return 0;&#125; C12345678#include &lt;stdio.h&gt;int main()&#123; int a, b; scanf("%d%d",&amp;a, &amp;b); printf("%d\n", a + b); return 0;&#125; 2. T组数据输入输出题目要求输入T组整数a和b，然后对于每组的输入，分别输出对应a和b的和。常见的有两种方法，分别是while循环和for循环。while循环方式C++123456789101112#include &lt;iostream&gt;using namespace std;int main()&#123; int t, a, b; cin &gt;&gt; t; while(t--) &#123; cin &gt;&gt; a &gt;&gt; b; cout &lt;&lt; a + b &lt;&lt; endl; &#125;&#125; C1234567891011#include &lt;stdio.h&gt;int main()&#123; int t, a, b; scanf("%d", &amp;t); while(t--) &#123; scanf("%d%d",&amp;a, &amp;b); printf("%d\n", a + b); &#125;&#125; for循环方式 C++123456789101112#include &lt;iostream&gt;using namespace std;int main()&#123; int t, a, b; cin &gt;&gt; t; for(int i = 0; i &lt; t; i++) &#123; cin &gt;&gt; a &gt;&gt; b; cout &lt;&lt; a + b &lt;&lt; endl; &#125;&#125; C1234567891011#include &lt;stdio.h&gt;int main()&#123; int t, a, b; scanf("%d", &amp;t); for(int i = 0; i &lt; t; i++) &#123; scanf("%d%d",&amp;a, &amp;b); printf("%d\n", a + b); &#125;&#125; 3. 多组数据的输入输出（具体有几组不告诉你，而竞赛中最常见的就是这种方式）题目要求输入多组整数a和b，然后对于每组的输入，分别输出对应a和b的和。不告诉你究竟有几组数组，该如何处理这种情况呢？首先说一下评测系统是如何判断你的程序是否正确的实际上评测系统是把程序的标准输入输出数据都是放在文本文件里，你提交的程序会先经过编译，然后运行，从输入文件中读取数据，然后把结果输出到一个文本文件中，评测系统再把标准的输出文件和你提交的程序运行的结果的输出文件进行对比，从而判断你提交的程序的正确与否。既然是这样，要判断提交的程序的正确性就依赖于系统的测试数据，这时就不可能只是用一组测试数据来判断程序的正确性，需要有很多组测试数据，而国际ACM比赛标准的评测系统是PC2，它只支持一个题目一个输入数据文件、一个输出数据文件。所以这时候就得把多组测试数据放在一个文件里，提交的程序必须把这个文件里的多组输入数据都得出结果。现在我们了解了评测系统是把测试数据放在文件中的，既然这样我们就可以通过判断是否已经到了文件尾部来判断有多少组数据，判断文件尾的方法如下： C++12345678910#include &lt;iostream&gt;using namespace std;int main()&#123; int a, b; while(cin &gt;&gt; a &gt;&gt; b)//C++把cin语句放在while循环中。 &#123; cout &lt;&lt; a + b &lt;&lt; endl; &#125;&#125; C123456789101112131415161718192021#include &lt;stdio.h&gt;int main()&#123; int a, b; //一共有三种方式 while(scanf("%d%d",&amp;a, &amp;b) != EOF)//EOF的值为-1，而scanf当没有输入的时候会返回 - 1 &#123; printf("%d\n", a + b); &#125; while(scanf("%d%d",&amp;a, &amp;b) == 2)//有几个输入，那么scanf就返回几，所以说这样写也可以 &#123; printf("%d\n", a + b); &#125; /*对scanf的返回值取按位反，-1按位取反会变为0，只要返回值不为-1，就一直读下去，如果到了-1，则说明到了文件 尾了。*/ while(~scanf("%d%d",&amp;a, &amp;b)) &#123; printf("%d\n", a + b); &#125;&#125; 有没有发现，对于多组输入的a和b，是边输入边输出，而不是将这些数存到某数组里面，在输入结束时，再对其进行分别输出。 如果你还是小白，千万不要忽视这一点，兴许你现在还没不以为然，但一定要有这个思维。 4. 多组数据的输入输出，以某种标志结束输入题目要求输入多组整数a和b，然后对于每组的输入，分别输出对应a和b的和，当a, b同时为0时结束 C++123456789101112#include &lt;iostream&gt;using namespace std;int main()&#123; int a, b; while(cin &gt;&gt; a &gt;&gt; b) &#123; if(a == 0 &amp;&amp; b == 0) break; cout &lt;&lt; a + b &lt;&lt; endl; &#125;&#125; C 123456789101112#include &lt;stdio.h&gt;int main()&#123; int a, b; while(scanf("%d%d",&amp;a, &amp;b) != EOF) &#123; if(a == 0 &amp;&amp; b == 0) break; printf("%d\n", a + b); &#125;&#125;]]></content>
+      <categories>
+        <category>acm</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[POJ 3278]]></title>
+    <url>%2F2019%2F04%2F28%2FPOJ%203278%2F</url>
+    <content type="text"><![CDATA[AC代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &lt;iostream&gt;#include &lt;queue&gt;#include &lt;cstring&gt;using namespace std;const int maxn = 100005;bool vis[maxn];int dir[2] = &#123;1, -1&#125;;int n, k;struct node&#123; int x, step;&#125;;bool check(node m)&#123; if(m.x &lt; 0 || m.x &gt; 100000 || vis[m.x]) return false; return true;&#125;int bfs(node start)&#123; queue &lt;node&gt; q; q.push(start); node cur; node next; while(q.size()) &#123; cur = q.front(); q.pop(); for(int i = 0; i &lt; 2; i++) &#123; next.x = cur.x + dir[i]; next.step = cur.step + 1; if(check(next)) &#123; q.push(next); vis[next.x] = true; if(next.x == k) return next.step; &#125; &#125; next.x = cur.x * 2; next.step = cur.step + 1; if(check(next)) &#123; q.push(next); vis[next.x] = true; if(next.x == k) return next.step; &#125; &#125; return -1;&#125;int main()&#123; while(cin &gt;&gt; n &gt;&gt; k) &#123; memset(vis, false, sizeof vis); node m; m.x = n; m.step = 0; if(n &gt;= k) cout &lt;&lt; n - k &lt;&lt; endl; else cout &lt;&lt; bfs(m) &lt;&lt; endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>acm</category>
+      </categories>
+  </entry>
+</search>
