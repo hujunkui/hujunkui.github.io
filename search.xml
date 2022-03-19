@@ -4,29 +4,26 @@
   
     
     <entry>
-      <title>nacos</title>
-      <link href="/2020/09/22/nacos/"/>
-      <url>/2020/09/22/nacos/</url>
+      <title>测试语雀同步hexo</title>
+      <link href="/2022/03/15/%E6%B5%8B%E8%AF%95%E8%AF%AD%E9%9B%80%E5%90%8C%E6%AD%A5hexo/"/>
+      <url>/2022/03/15/%E6%B5%8B%E8%AF%95%E8%AF%AD%E9%9B%80%E5%90%8C%E6%AD%A5hexo/</url>
       
-        <content type="html"><![CDATA[<h4 id="nacos"><a href="#nacos" class="headerlink" title="nacos"></a>nacos</h4><p>nacos 启动报错</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat</span><br><span class="line">        at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:156)</span><br><span class="line">        at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544)</span><br><span class="line">        at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)</span><br><span class="line">        at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)</span><br><span class="line">        at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)</span><br><span class="line">        at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)</span><br><span class="line">        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)</span><br><span class="line">        at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)</span><br><span class="line">        at com.alibaba.nacos.Nacos.main(Nacos.java:35)</span><br><span class="line">        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span><br><span class="line">        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)</span><br><span class="line">        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</span><br><span class="line">        at java.lang.reflect.Method.invoke(Method.java:498)</span><br><span class="line">        at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)</span><br><span class="line">        at org.springframework.boot.loader.Launcher.launch(Launcher.java:107)</span><br><span class="line">        at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)</span><br><span class="line">        at org.springframework.boot.loader.PropertiesLauncher.main(PropertiesLauncher.java:467)</span><br><span class="line">Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat</span><br><span class="line">        at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:124)</span><br><span class="line">        at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.&lt;init&gt;(TomcatWebServer.java:86)</span><br><span class="line">        at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:416)</span><br><span class="line">        at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:180)</span><br><span class="line">        at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180)</span><br><span class="line">        at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:153)</span><br><span class="line">        ... 16 common frames omitted</span><br></pre></td></tr></table></figure><p>nacos 默认以集群模式启动</p><p>以单机模式启动</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\startup.cmd -m standalone</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> spring cloud </category>
-          
-          <category> nacos </category>
-          
-      </categories>
+        <content type="html"><![CDATA[<p>测试语雀同步 hexo</p>]]></content>
       
       
-        <tags>
-            
-            <tag> spring cloud </tag>
-            
-            <tag> nacos </tag>
-            
-        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>git的基本使用</title>
+      <link href="/2022/03/14/git%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
+      <url>/2022/03/14/git%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<p>测试语雀同步 hexo</p>]]></content>
+      
+      
       
     </entry>
     
