@@ -17,11 +17,11 @@
     
     
     <entry>
-      <title>wqjd</title>
-      <link href="/2022/03/15/wqjd/"/>
-      <url>/2022/03/15/wqjd/</url>
+      <title>npm常用命令</title>
+      <link href="/2022/03/15/npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2022/03/15/npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
       
-        <content type="html"><![CDATA[<p>标签 111111111111111111111111111111111111111111111111111111111111111111111111111111111<img src="https://cuberkpic.oss-cn-shanghai.aliyuncs.com/blog/image/Fq5C8KYtct-jTrJIBUtHVi3ln8ox.png"></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>测试语雀同步 hexo</p><p><img src="https://cuberkpic.oss-cn-shanghai.aliyuncs.com/blog/image/FswN_tMSj-Iajrfnyw5re3tdDRpV.jpeg"></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="npm-切换镜像"><a href="#npm-切换镜像" class="headerlink" title="npm 切换镜像"></a>npm 切换镜像</h1><h2 id="获取当前镜像"><a href="#获取当前镜像" class="headerlink" title="获取当前镜像"></a>获取当前镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry</span><br></pre></td></tr></table></figure><h2 id="设置镜像"><a href="#设置镜像" class="headerlink" title="设置镜像"></a>设置镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry</span><br></pre></td></tr></table></figure><h3 id="设置淘宝镜像"><a href="#设置淘宝镜像" class="headerlink" title="设置淘宝镜像"></a>设置淘宝镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.cnpmjs.org/</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
