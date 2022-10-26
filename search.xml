@@ -4,37 +4,11 @@
   
     
     <entry>
-      <title>hexo模板文件</title>
-      <link href="/2022/04/13/hexo%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6/"/>
-      <url>/2022/04/13/hexo%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6/</url>
-      
-        <content type="html"><![CDATA[<p>_—<br>_title: wqjd<br>urlname: yid75o<br>date: ‘’<br>tags: _[test]<br>_categories: _[test]<br>—_</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>npm常用命令</title>
       <link href="/2022/03/15/npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
       <url>/2022/03/15/npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
       
         <content type="html"><![CDATA[<h1 id="npm-切换镜像"><a href="#npm-切换镜像" class="headerlink" title="npm 切换镜像"></a>npm 切换镜像</h1><h2 id="获取当前镜像"><a href="#获取当前镜像" class="headerlink" title="获取当前镜像"></a>获取当前镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry</span><br></pre></td></tr></table></figure><h2 id="设置镜像"><a href="#设置镜像" class="headerlink" title="设置镜像"></a>设置镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry</span><br></pre></td></tr></table></figure><h3 id="设置淘宝镜像"><a href="#设置淘宝镜像" class="headerlink" title="设置淘宝镜像"></a>设置淘宝镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.cnpmjs.org/</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>git的基本使用</title>
-      <link href="/2022/03/14/git%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
-      <url>/2022/03/14/git%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
-      
-        <content type="html"><![CDATA[<p>测试语雀同步 hexo</p>]]></content>
       
       
       
