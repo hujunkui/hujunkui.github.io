@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Linux 常用命令</title>
+      <link href="/2022/06/14/Linux%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2022/06/14/Linux%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h2 id="防火墙（firewall）"><a href="#防火墙（firewall）" class="headerlink" title="防火墙（firewall）"></a>防火墙（firewall）</h2><p>systemctl status firewalld 查看防火墙状态<br>systemctl start firewalld 开启防火墙<br>systemctl stop firewalld 关闭防火墙<br>firewall-cmd –permanent –zone=public –add-port=27017/tcp –permanent 开启指定端口<br>firewall-cmd –zone=public –remove-port=27017/tcp –permanent 关闭指定端口<br>firewall-cmd –permanent –zone=public –add-port=27017-30000/tcp –permanent 开启指定范围端口<br>firewall-cmd –permanent –zone=public –add-port=1-65535/tcp –permanent 开始所有端口<br>firewall-cmd –zone=public –remove-port=27017-30000/tcp –permanent 关闭指定范围端口<br>firewall-cmd –permanent –query-port=27017/tcp 查看端口是否开放<br>firewall-cmd –reload 重启防火墙<br>firewall-cmd –list-ports 查看已经开放的端口<br>iptables -L -n 查看规则，这个命令是和 iptables 的相同的<br>man firewall-cmd 查看帮助</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>npm常用命令</title>
       <link href="/2022/03/15/npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
       <url>/2022/03/15/npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
